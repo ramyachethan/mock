@@ -9,9 +9,12 @@ def pali(x):
 for i in pali(x):
     new += i
 if new == x:
-    print("yes ,it is Palindrome")
+    print("yes")
 else:
-    print("No ,it is not Palindrome")
+    print("No")
+    
+Explanation:
+    
 
 
 #program2:
@@ -36,14 +39,14 @@ print("sum of given two values:",sum)
 #program:3
 #remove "0" from ip address
 # o/p =  216.8.94.196
-x = "216.08.094.196"
-y=""
+import re
+def remove(ip_add):
+  string = re.sub('(?!(\.0\.))(\.[0]{1,2})', '.', ip_add)
+  return string
+ip = "216.08.094.196"
+print(remove(ip))
 
-for i in x:
-    if i=='0':
-        continue
-    y+=i
-print(y)
+Explanation:
 
 #program:4
 #reverse only alphbets:
@@ -67,6 +70,8 @@ while i < j:
 res = ''.join(l)
 print(res)
 
+Explanation:
+
 #program:5
 #duplicate count:
 #findout elements duplicate count output in  dict format
@@ -80,6 +85,8 @@ for a in list:
         new[a]=new.count(a)
 print(new)
 
+Explanation:
+
 #program:6
 #add alphbets and integer
 
@@ -89,23 +96,25 @@ print(new)
 t1 = (1, 2, 3, "a", "c")
 t2 = ("b", "d", 9, 8, 7)
 Output = []
-x = []
-y = []
-r = []
+a = []
+b = []
+c = []
 for i in list(t2):
     if type(i) == int:
-        x.append(i)
+        a.append(i)
     else:
-        y.append(i)
+        b.append(i)
 
-z = x + y
+d = a + b
 
 for i in range(len(t1)):
-    k = list(t1)
-    m = k[i] + z[i]
-    r.append(m)
-output = tuple(r)
+    l = list(t1)
+    n = l[i] + d[i]
+    c.append(n)
+output = tuple(c)
 print(output)
+
+Explanation:
 
 #program:7
 #adding nested list:
@@ -125,5 +134,40 @@ for i in l:
         new.append(i)
 print(new)
 
+Explanation:
+    with using for loop iterate the value in the list checks  if the listitem is list 
 
+#program:8
+#Load a file in python
+    
+    with open("C:\Users\jayam\Desktop","r+") as file:
+    file_content = file.read()
+    print("the no. of lines in file is ",  len(file_content.split("\n")))
+    words_count = 0
+    chars_count = 0
+    vowels = 0
+    consonant = 0
+    for i in file_content.split("\n"):
+        for j in i.split(" "):
+            if not j.isalpha() and not j.isalnum():
+                continue
+            else:
+                words_count += 1
+
+        for j in i:
+            if not j.isalpha() and not j.isalnum():
+                continue
+            else:
+                chars_count += 1
+
+        for j in i:
+            if j.lower() in "aeiou":
+                vowels += 1
+            else:
+                consonant += 1
+
+    print("the total words in file is ", words_count)
+    print("the total words in file is ", chars_count)
+    print("the total vowels in file is ", vowels)
+    print("the total consonant in file is ", consonant)
 
