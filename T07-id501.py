@@ -1,5 +1,18 @@
 #program:1
-palindrome:
+#palindrome:
+#using iterator   
+
+s = input('Enter the string: ')
+i=0
+for i in range(len(s)):
+   if s[i]!=s[-1-i]:
+      print(s,'is not a Palindrome')
+      break
+   else:
+      print(s,'is a Palindrome')
+      break
+ 
+#using generator and iterator   
 
 x = "ramya"
 new = ""
@@ -13,14 +26,15 @@ if new == x:
 else:
     print("No")
     
-Explanation:
+"""Explanation:
     
 
 
 #program2:
-Adding two list
+#Adding two list
 #x = [1,2,3,4]
 #y = [9,9,9,9]
+
 a=int(input("enter the value:"))
 b=int(input("enter the value:"))
 X=str(a)
@@ -36,6 +50,9 @@ for z in res:
        sum+=z
 print("sum of given two values:",sum)
 
+"""#Expalnation:converted the given integer into string and then to list, created empty list to append the result. with the for loop iterate the element as i and appended the value of x[i] and y[i] in the empty list
+to get the sum  of the list again used for loop to add  iterating element with sum variable."""
+
 #program:3
 #remove "0" from ip address
 # o/p =  216.8.94.196
@@ -46,12 +63,15 @@ def remove(ip_add):
 ip = "216.08.094.196"
 print(remove(ip))
 
-Explanation:
+"""Explanation:
+    import regularexpression module with the use of re.sub() method removed the zeros in the given input.
+    #sub() is used to search the substring in the given input."""
 
 #program:4
 #reverse only alphbets:
 #st = "ab@#cd!ef"
 #Output: fe @  # dc!ba
+
 s="ab@cd!ef"
 l=list(s)
 #print(l)
@@ -70,7 +90,7 @@ while i < j:
 res = ''.join(l)
 print(res)
 
-Explanation:
+"""Explanation: used isalpha() method tho check the given input is whether string r not .used "=" operator to swap the alphabets and using join() got the result"""
 
 #program:5
 #duplicate count:
@@ -85,7 +105,7 @@ for a in list:
         new[a]=new.count(a)
 print(new)
 
-Explanation:
+"""Explanation:created empty dictionary to store the result in dict format using get() method if the items is reapeated more than once i added the count."""
 
 #program:6
 #add alphbets and integer
@@ -134,8 +154,8 @@ for i in l:
         new.append(i)
 print(new)
 
-Explanation:
-    with using for loop iterate the value in the list checks  if the listitem is list 
+"""Explanation:
+    with using for loop iterate the value in the list checks  if the listitem is list """
 
 #program:8
 #Load a file in python
