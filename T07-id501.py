@@ -19,15 +19,25 @@ new = ""
 def pali(x):
     for i in x[::-1]:
         yield i
+        print(i,end="")
 for i in pali(x):
     new += i
+print("\n",new)
 if new == x:
-    print("yes")
+    print("\n yes")
 else:
-    print("No")
+    print("\n No")
     
 """Explanation:
-    
+    An integer is a palindrome when it reads the same backward as forward.
+    Read the number or letter.
+    Hold the letter or number in a temporary variable"new".
+    Reverse the letter or number with silicing operator.
+    Adding the reversed chars into the temp variable"new"
+    Compare the temporary variable with reverses letter or number.
+    If both letters or numbers are the same, print "this string/number is a palindrome."
+    Else print, "this string/number is not a palindrome."
+    For example, 121 is a palindrome while 123 is not.
 
 
 #program2:
@@ -160,8 +170,11 @@ print(new)
 #program:8
 #Load a file in python
     
-    with open("C:\Users\jayam\Desktop","r+") as file:
+    import re
+    with open("C:\Users\jayam\Desktop","r") as file:
     file_content = file.read()
+    lines = len(file.readlines())
+    #special_char=re.compile('[@_!$%^&*()<>?/\|}{~:]#')
     print("the no. of lines in file is ",  len(file_content.split("\n")))
     words_count = 0
     chars_count = 0
@@ -190,4 +203,4 @@ print(new)
     print("the total words in file is ", chars_count)
     print("the total vowels in file is ", vowels)
     print("the total consonant in file is ", consonant)
-
+    print('Total Number of lines:', lines)
